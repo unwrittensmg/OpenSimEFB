@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fenix EFB</title>
+
+    <!-- Refs to necessary css -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <link rel="icon" href="/static/assets/favicon.ico" type="image/x-icon">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div class="title-bar">
+    <!-- Home-Button (left) -->
+    <a href="/" class="home-button">
+        <span class="material-icons">home</span>
+    </a>
+
+    <!-- Title (middle) -->
+    <div class="title">OpenSimEFB</div>
+
+    <!-- Settings icon and Zulu-time (right) -->
+    <div class="right-section">
+        <span id="zulu-time"></span>
+        <span class="material-icons">settings</span>
+    </div>
+</div>
+
+    <!-- Fullscreen: IFrame -->
+    <div class="iframe-container">
+        <iframe id="external-frame" src="http://192.168.2.195:8083" frameborder="0"></iframe>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="/static/js/zulu-time.js"></script>
+</body>
+</html>

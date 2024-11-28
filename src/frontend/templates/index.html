@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenSimEFB</title>
+
+    <!-- Refs to necessary css -->
+    <link rel="stylesheet" href="/static/css/styles.css">
+    <!-- Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+<div class="title-bar">
+    <!-- Home-Button (left) -->
+    <a href="/" class="home-button">
+        <span class="material-icons">home</span>
+    </a>
+
+    <!-- Title (middle) -->
+    <div class="title">OpenSimEFB</div>
+
+    <!-- Settings icon and Zulu-Zeit (right) -->
+    <div class="right-section">
+        <span id="zulu-time"></span>
+        <span class="material-icons">settings</span>
+    </div>
+</div>
+
+    <!-- Grid with Icons -->
+    <div class="grid-container">
+        <!-- First Row -->
+        <div class="grid-row">
+            {% for app in row1 %}
+            <a href="{{ app.url }}" class="app-icon">
+                <img src="{{ url_for('static', filename=app.icon) }}" alt="{{ app.name }}">
+                <p>{{ app.name }}</p>
+            </a>
+            {% endfor %}
+        </div>
+
+        <!-- Second Row -->
+        <div class="grid-row">
+            {% for app in row2 %}
+            <a href="{{ app.url }}" class="app-icon">
+                <img src="{{ url_for('static', filename=app.icon) }}" alt="{{ app.name }}">
+                <p>{{ app.name }}</p>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <script src="/static/js/zulu-time.js"></script>
+
+</body>
+</html>
